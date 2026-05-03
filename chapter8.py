@@ -47,7 +47,7 @@ describe_pet('旺财', 'dog')
 #8.2.2 关键字实参，在函数调用的过程中使用关键字，这时就不需要关注顺序了
 describe_pet(animal_type = 'dog', pet_name = '旺财')
 describe_pet(pet_name = '旺财', animal_type = 'dog')
-
+# 测试 VSCode 同步到 GitHub
 
 
 
