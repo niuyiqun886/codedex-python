@@ -145,34 +145,106 @@
 #print(musician)
 
 #8.3.4 结合使用函数和while循环
-def get_fomatted_name(first_name, last_name):
-    """返回规范格式的姓名"""
-    full_name = f"{first_name} {last_name}"
-    return full_name.title()
+#def get_fomatted_name(first_name, last_name):
+#   """返回规范格式的姓名"""
+#    full_name = f"{first_name} {last_name}"
+#    return full_name.title()
 
 #这是一个无限循环
-while True:
-    print("\nPlease tell me your name:")
-    f_name = input("First name: ")
-    l_name = input("Last name: ")
+#while True:
+#    print("\nPlease tell me your name:")
+#   f_name = input("First name: ")
+#   l_name = input("Last name: ")
 
-    formatte_name  = get_fomatted_name(f_name, l_name)
-    print(f"\nHello, {formatte_name}!")
+#    formatte_name  = get_fomatted_name(f_name, l_name)
+#    print(f"\nHello, {formatte_name}!")
 #加入了退出和不退出循环的命令    
-    exit = input("Do you want to quit?(yes/no)")
-    if exit == 'yes':
-        break
-    elif exit == 'no':
-        continue
+#    exit = input("Do you want to quit?(yes/no)")
+#    if exit == 'yes':
+#       break
+#    elif exit == 'no':
+#        continue
+
+#练习 8.6：城市名
+#def city_country(city, country):
+#    country_name = f"{city}, {country}"
+#    return country_name.title()
+
+#c_c = city_country('santiago', 'chile')
+#print(c_c)
+
+#练习8.7:专辑
+#def make_album(singer_name, album_name, number_song = None):
+#    album = {'singer': singer_name, 'album': album_name, 'number': number_song}
+#    return album
+
+#album1 = make_album('Taylor Swift','Love', 10)
+#print(album1)
+#album2 = make_album('Ed Sheeran','Divide')
+#print(album2)
+#album3 = make_album('Jay Chou','Fantasy')
+#print(album3)
 
 
 
+#练习8.8
+#while True:
+#    print("\nThere are some new albums been published:")
+#    S_singers = input("Name of singers?")
+#    A_albums = input("Name of albums?")
+#    N_number = input("Number of songs")
+#    singer_album = make_album(S_singers, A_albums, N_number)
+#    print(singer_album)
+    
+#    answer = input("Do you want to quit?(yes/no)")
+#    if answer == 'yes':
+#        break
 
+#8.4 传递列表
+#def greet_users(names):
+#    """向列表中的每个用户发出简单的问候"""
+#    for name in names:
+#        msg = f"Hello, {name.title()}"
+#        print(msg)
 
+#username = ['hannah', 'ty', 'margot']
+#greet_users(username)
 
+#8.4.1 在函数中修改列表
+#首先创建一个列表，其中包含一些需要打印的设计
+#unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+#completed_models = []
 
+#模拟打印每个设计，知道没有未打印的设计为止
+#打印每个设计后，都将其移动到列表：complete_models 中
+#while unprinted_designs:
+#    current_design = unprinted_designs.pop()
+#    print(f"Printing model: {current_design}")
+#    completed_models.append(current_design)
 
+#显示打印好的所有模型
+#print("\nThe following models have been printed:")
+#for completed_model in completed_models:
+#    print(completed_model)
 
+def print_models(unprinted_designs, completed_models):
+    """模拟打印每个设计,直到没有未打印的设计为止
+    打印每个设计后,都将其移动到列表complete_models 中"""
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing model:{current_design}")
+        completed_models.append(current_design)
+
+def show_completed_models(completed_models):
+    print("\nThe following models have been printed:")
+    for completed_model in completed_models:
+        print(completed_model)
+
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+print_models(unprinted_designs,completed_models)
+show_completed_models(completed_models)
 
 
 
