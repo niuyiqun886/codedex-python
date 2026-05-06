@@ -227,34 +227,45 @@
 #for completed_model in completed_models:
 #    print(completed_model)
 
-def print_models(unprinted_designs, completed_models):
-    """模拟打印每个设计,直到没有未打印的设计为止
-    打印每个设计后,都将其移动到列表complete_models 中"""
-    while unprinted_designs:
-        current_design = unprinted_designs.pop()
-        print(f"Printing model:{current_design}")
-        completed_models.append(current_design)
+#def print_models(unprinted_designs, completed_models):
+#    """模拟打印每个设计,直到没有未打印的设计为止
+#    打印每个设计后,都将其移动到列表complete_models 中"""
+#    while unprinted_designs:
+#        current_design = unprinted_designs.pop()
+#        print(f"Printing model:{current_design}")
+#        completed_models.append(current_design)
 
-def show_completed_models(completed_models):
-    print("\nThe following models have been printed:")
-    for completed_model in completed_models:
-        print(completed_model)
+#def show_completed_models(completed_models):
+#    print("\nThe following models have been printed:")
+#    for completed_model in completed_models:
+#        print(completed_model)
 
-unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
-completed_models = []
+#unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+#completed_models = []
 
-print_models(unprinted_designs,completed_models)
-show_completed_models(completed_models)
+#print_models(unprinted_designs,completed_models)
+#show_completed_models(completed_models)
 
+#禁止函数修改列表
+#print_models(unprinted_designs[:], completed_models)  #使用的是unprinted_designs[:]
+                                                      #也就是unprinted_designs的副本，并不会改变原来的列表
+#print(unprinted_designs)
 
+#练习 8.9：消息
+message = ['I want to go to China','I want to go to India','I want to go to Japan',
+           'I also want to go to Russia']
 
+#这两种写法都可以达到目的，但是第一种破换了原来的列表，第二种没破坏。第一种是倒序，第二种是正序。
+#def show_message(sentence):
+#    while sentence:
+#        sentence_out = sentence.pop()
+#        print(sentence_out)
 
+def show_message(sentence):
+    for sent in sentence:
+        print(sent)
 
-
-
-
-
-
+show_message(message)
 
 
 
