@@ -252,8 +252,8 @@
 #print(unprinted_designs)
 
 #练习 8.9：消息
-message = ['I want to go to China','I want to go to India','I want to go to Japan',
-           'I also want to go to Russia']
+#message = ['I want to go to China','I want to go to India','I want to go to Japan',
+#           'I also want to go to Russia']
 
 #这两种写法都可以达到目的，但是第一种破换了原来的列表，第二种没破坏。第一种是倒序，第二种是正序。
 #def show_message(sentence):
@@ -261,33 +261,68 @@ message = ['I want to go to China','I want to go to India','I want to go to Japa
 #        sentence_out = sentence.pop()
 #        print(sentence_out)
 
-def show_message(sentence):
-    for sent in sentence:
-        print(sent)
+#def show_message(sentence):
+#    for sent in sentence:
+#        print(sent)
 
-show_message(message)
+#show_message(message)
+
+#练习：8.10：发送消息
+#message = ['I want to go to China','I want to go to India','I want to go to Japan',
+#           'I also want to go to Russia']
+#send_mes = []
+#def send_message(sentence,send):
+#    while sentence:
+#        sentence_out = sentence.pop()
+#        print(sentence_out)
+#        send.append(sentence_out)
+
+#send_message(message,send_mes)
+#print(message)
+#print(send_mes)
+
+#联系8.11消息归档
+#send_message(message[:],send_mes)
+#print(message)
+#print(send_mes)
 
 
+#8.5传递任意数量的实参
+#def make_pizza(*toppings):
+#    """打印顾客点的所有配料"""
+#    print(toppings)
+
+#make_pizza('pepperoni')
+#make_pizza('mushroom', 'green peppers', 'extra cheese')
+
+#def make_pizza(*toppings):
+#    """概述要制作的披萨"""
+#    print("\nMaking a pizza with following toppings:")
+#   for topping in toppings:
+#        print(f"- {topping}")
+
+#make_pizza('pepperoni')
+#make_pizza('mushroom', 'green peppers', 'extra cheese')
 
 
+#8.5.1结合使用位置实参和任意数量的实参
+#def make_pizza(size, *toppings):
+#    print(f"\nMaking a {size}-inch pizza with following toppings:")
+#    for topping in toppings:
+#        print(f"- {topping}")
 
+#make_pizza(16, 'pepperoni')
+#make_pizza(12,'mushroom', 'green peppers', 'extra cheese')
 
+#8.5.2使用任意数量的关键字实参
+def build_profile(first, last, **user_info):
+    """创建一个字典，其中包含我们知道的有关客户的一切"""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+user_profile = build_profile('albert', 'einstein', location = 'princeton', field = 'physics')
+print(user_profile)
 
 
 
