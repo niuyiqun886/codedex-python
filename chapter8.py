@@ -315,44 +315,87 @@
 #make_pizza(12,'mushroom', 'green peppers', 'extra cheese')
 
 #8.5.2使用任意数量的关键字实参
-def build_profile(first, last, **user_info):
-    """创建一个字典，其中包含我们知道的有关客户的一切"""
-    user_info['first_name'] = first
-    user_info['last_name'] = last
-    return user_info
+#def build_profile(first, last, **user_info):
+#    """创建一个字典，其中包含我们知道的有关客户的一切"""
+#    user_info['first_name'] = first
+#    user_info['last_name'] = last
+#   return user_info
 
-user_profile = build_profile('albert', 'einstein', location = 'princeton', field = 'physics')
-print(user_profile)
+#user_profile = build_profile('albert', 'einstein', location = 'princeton', field = 'physics')
+#print(user_profile)
+
+#练习8.12：三明治
+#def sandwich(*addings):
+#    print("I want to add some addings on the sandwich:")
+#    for adding in addings:
+#       print(f"-{adding}")
+
+#sandwich('banana')
+#sandwich('watermelon', 'grape')
+#sandwich('mushroom', 'pineapple', 'apple')
+
+#练习8.13：用户简介
+#def build_profile(first, last, **user_info):
+#    """创建一个字典，其中包含我们知道的有关客户的一切"""
+#    user_info['first_name'] = first
+#    user_info['last_name'] = last
+#    return user_info
+
+#user_profile = build_profile('Niu', 'Yiqun', university = 'sut', field = 'Integrated Circuit',
+#                             age = 27)
+#print(user_profile)
+
+#练习8.14：汽车
+#def car_info(brand, name, **car_type):
+#    car_type['car_brand'] = brand
+#    car_type['car_name'] = name
+#    return car_type
+
+#car = car_info('subaru', 'outback',color ='blue', tow_package = True)
+#print(car)
+
+#8.6将函数存储在模块中
+#8.6.1 导入整个模块(在其他文件中创建这个make_pizza这个函数，然后文件夹名字为pizza直接import调用这个文件夹，就可以直接使用这个函数)
+#import pizza
+
+#pizza.make_pizza(16, 'pepperoni')
+#pizza.make_pizza(12, 'mushroom', 'green peppers', 'extra cheese')
+
+#8.6.2 导入特定的函数(一个文件中包含多个函数，那么可以指定调哪一个函数)
+#格式：from modeule_name import function_0, function_1, function_2
+
+#from pizza import make_pizza
+
+#make_pizza(16, 'pepperoni')
+#make_pizza(12, 'mushroom', 'green peppers', 'extra cheese')
 
 
+#8.6.3 使用as给函数指定别名,将make_pizza指定为mp
+#from pizza import make_pizza as mp
 
+#mp(16, 'pepperoni')
+#mp(12, 'mushroom', 'green peppers', 'extra cheese')
 
+#8.6.4 使用as给模块指定别名
+#import pizza as p
 
+#p.make_pizza(16, 'pepperoni')
+#p.make_pizza(12, 'mushroom', 'green peppers', 'extra cheese')
 
+#8.6.5 导入模块中的所有函数，使用‘*’号
+#from pizza import *
 
+#make_pizza(16, 'pepperoni')
+#make_pizza(12, 'mushroom', 'green peppers', 'extra cheese')
 
+#练习8.15：打印模型
 
+import print_models as pm
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+pm.print_models(unprinted_designs,completed_models)
+pm.show_completed_models(completed_models)
 
 
 
