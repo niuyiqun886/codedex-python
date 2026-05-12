@@ -226,48 +226,172 @@
 
 
 #练习9.5 :尝试登录次数
-class User:
-    def __init__(self, first_name, last_name):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.login_attempts = 0
+#class User:
+#   def __init__(self, first_name, last_name):
+#        self.last_name = last_name
+#        self.login_attempts = 0
        
-    def describe_user(self):
-        """用于打印用户信息摘要"""
-        print(f"This user's name is {self.first_name} {self.last_name}.")
+#    def describe_user(self):
+#        """用于打印用户信息摘要"""
+#        print(f"This user's name is {self.first_name} {self.last_name}.")
 
-    def greet_user(self):
-        """用于向用户发出个性化的问候"""
-        print(f"Welcome to our website, {self.first_name}!")
+#    def greet_user(self):
+#        """用于向用户发出个性化的问候"""
+#        print(f"Welcome to our website, {self.first_name}!")
 
-    def increment_login_attempts(self):
-        self.login_attempts += 1
-        print(self.login_attempts)
+#    def increment_login_attempts(self):
+#        self.login_attempts += 1
+#        print(self.login_attempts)
 
-    def reset_login_attempts(self):
-        self.login_attempts = 0
-        print(self.login_attempts)
+#    def reset_login_attempts(self):
+#        self.login_attempts = 0
+#        print(self.login_attempts)
 
-user1 = User('Niu', 'yiqun')
-user1.describe_user()
-user1.greet_user()
-user1.increment_login_attempts()
-user1.increment_login_attempts()
-user1.increment_login_attempts()
-user1.reset_login_attempts()
+#user1 = User('Niu', 'yiqun')
+#user1.describe_user()
+#user1.greet_user()
+#ser1.increment_login_attempts()
+#user1.increment_login_attempts()
+#user1.increment_login_attempts()
+#user1.reset_login_attempts()
+
+#9.3继承
+#9.3.1子类的__init__()方法,定义一个子类，包含父类的所有特征
+#class Car:
+#    """一次模拟汽车的简单尝试"""
+#    def __init__(self, make, model, year):
+#        self.make = make
+#        self.model = model
+#        self.year = year
+#        self.odometer_reading = 10
+        
+#    def get_descriptive_name(self):
+#        """返回格式规范的描述性信息"""
+#        long_name = f"{self.year} {self.make}, {self.model}"
+#        return long_name.title()
+
+#    def read_odometer(self):
+#        """打印一条指出汽车行驶里程的消息"""
+#        print(f"This car has {self.odometer_reading} miles on it.")
+
+#   def update_odometer(self,mileage):
+#        if mileage >= self.odometer_reading:
+#            self.odometer_reading = mileage
+#        else:
+#            print("You can't roll back an odometer!")
+
+#    def increment_odometer(self, miles):
+#        """让里程表读数增加指定的量"""
+#        self.odometer_reading += miles
+    
+#    def fill_gas_tank(self):
+#        print(f"This car has a gas tank.")
+
+#class ElectricCar(Car):  #定义子类的时候必须在括号内指定父类名称。
+#    """电动汽车的独特之处"""
+#    def __init__(self, make, model, year):
+#        """初始化父类的属性"""
+#        super().__init__(make, model, year)  #是一个特殊的函数，然你可以调用父类的方法。
+#        #父类也称为“超类”superclass，函数名由此得名。
+#        self.battery_size = 40
+
+#    def describe_battery(self):
+#        """打印一条描述电池容量的消息"""
+#        print(f"This car has a {self.battery_size}-kWh battery.")
+
+#    def fill_gas_tank(self):
+#        """电动汽车没有油箱"""
+#        print("This car doesn't have a gas tank!")
+
+#my_leaf = ElectricCar('nissan', 'leaf', 2024)
+#print(my_leaf.get_descriptive_name())
+#my_leaf.describe_battery()
+
+#my_leaf.fill_gas_tank()
+#my_car = Car('Toyota', 'badao', 2018)
+#print(my_car.get_descriptive_name())
 
 
+#9.3.3重写父类中的方法
+
+#9.3.4 将实例用作属性
+#class Car:
+#    """一次模拟汽车的简单尝试"""
+#    def __init__(self, make, model, year):
+#        self.make = make
+#        self.model = model
+#        self.year = year
+#       self.odometer_reading = 10
+        
+#    def get_descriptive_name(self):
+#        """返回格式规范的描述性信息"""
+#        long_name = f"{self.year} {self.make}, {self.model}"
+#        return long_name.title()
+#class Battery:
+#    """一次模拟电动汽车电池的简单尝试"""
+#    def __init__(self, battery_size=40):
+#        """初始化电池属性"""
+#        self.battery_size = battery_size
+
+#    def describe_battery(self):
+#        """打印出一条电池容量的消息"""
+#        print(f"This car has a {self.battery_size}-kWh battery.")
+        
+#class ElectricCar(Car):  #定义子类的时候必须在括号内指定父类名称。
+#    """电动汽车的独特之处"""
+#   def __init__(self, make, model, year):
+#        """先初始化父类的属性，在初始化电动汽车特有属性"""
+#        super().__init__(make, model, year)
+#        self.battery = Battery()
+
+#y_leaf = ElectricCar('nissan', 'leaf', 2024)
+#rint(my_leaf.get_descriptive_name())
+#my_leaf.battery.describe_battery()
 
 
+#虽然看似做了很多额外的工作，但是现在想编辑电池的信息，就不会导致ElectricCar混乱
+class Car:
+    """一次模拟汽车的简单尝试"""
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 10
+        
+    def get_descriptive_name(self):
+        """返回格式规范的描述性信息"""
+        long_name = f"{self.year} {self.make}, {self.model}"
+        return long_name.title()
+class Battery:
+    """一次模拟电动汽车电池的简单尝试"""
+    def __init__(self, battery_size=40):
+        """初始化电池属性"""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """打印出一条电池容量的消息"""
+        print(f"This car has a {self.battery_size}-kWh battery.")
+    
+    def get_range(self):
+        """打印一条消息，指出电池续航里程"""
+        if self.battery_size == 40:
+            range = 150
+        elif self.battery_size ==65:
+            range ==225
+        print(f"This car can go about {range} miles on a full charge.")
 
 
+class ElectricCar(Car):  #定义子类的时候必须在括号内指定父类名称。
+    """电动汽车的独特之处"""
+    def __init__(self, make, model, year):
+        """先初始化父类的属性，在初始化电动汽车特有属性"""
+        super().__init__(make, model, year)
+        self.battery = Battery()
 
-
-
-
-
-
-
+my_leaf = ElectricCar('nissan', 'leaf', 2024)
+print(my_leaf.get_descriptive_name())
+my_leaf.battery.describe_battery()
+my_leaf.battery.get_range()
 
 
 
