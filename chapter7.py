@@ -48,15 +48,15 @@
 #练习7.2餐馆订位
 #people = input("How many people are in your dinner group? ")
 #people = int(people)
-#f people > 8:
+#if people > 8:
 #   print("You'll have to wait for a table.")
-#lse:
+#else:
 #   print("Your table is ready.")
 
 #练习7.3 10的整数倍
 #number = input("Enter a number, and I'll tell you if it's a multiple of 10: ")
 #number = int(number)
-#f number % 10 == 0:
+#if number % 10 == 0:
 #    print(f"\nThe number {number} is a multiple of 10.")
 #else:
 #    print(f"\nThe number {number} is not a multiple of 10.")
@@ -73,7 +73,7 @@
 #prompt += "\n Enter 'quit' to end the program. "
 
 #message = ""
-#hile message != 'quit':
+#while message != 'quit':
 #    message = input(prompt)
 #   print(message)
 

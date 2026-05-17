@@ -1,7 +1,7 @@
 #第9章 类
 #9.1创建和使用类
 #9.1.1 创建Dog类
-#class Dog:#首字母大写指的是类
+#class Dog:#首字母大写指的是类，__init__称为方法
 #    """一次模拟小狗的简单尝试"""
 #    def __init__(self, name, age):      #这里相当于是self python自动传入名字为my_dog，然后给my_dog起名字，一个是name，一个是age。
 #        self.name = name
@@ -350,70 +350,182 @@
 
 
 #虽然看似做了很多额外的工作，但是现在想编辑电池的信息，就不会导致ElectricCar混乱
+#class Car:
+#    """一次模拟汽车的简单尝试"""
+#   def __init__(self, make, model, year):
+#        self.make = make
+#        self.model = model
+#       self.year = year
+#       self.odometer_reading = 10
+        
+#    def get_descriptive_name(self):
+#        """返回格式规范的描述性信息"""
+#        long_name = f"{self.year} {self.make}, {self.model}"
+#        return long_name.title()
+#class Battery:
+#    """一次模拟电动汽车电池的简单尝试"""
+#    def __init__(self, battery_size=40):
+#        """初始化电池属性"""
+#        self.battery_size = battery_size
+
+#    def describe_battery(self):
+#        """打印出一条电池容量的消息"""
+#        print(f"This car has a {self.battery_size}-kWh battery.")
+    
+#    def get_range(self):
+#        """打印一条消息，指出电池续航里程"""
+#        if self.battery_size == 40:
+#            range = 150
+#        elif self.battery_size ==65:
+#            range ==225
+#        print(f"This car can go about {range} miles on a full charge.")
+
+
+#class ElectricCar(Car):  #定义子类的时候必须在括号内指定父类名称。
+#    """电动汽车的独特之处"""
+#    def __init__(self, make, model, year):
+#        """先初始化父类的属性，在初始化电动汽车特有属性"""
+#        super().__init__(make, model, year)
+#        self.battery = Battery()
+
+#my_leaf = ElectricCar('nissan', 'leaf', 2024)
+#print(my_leaf.get_descriptive_name())
+#my_leaf.battery.describe_battery()
+#my_leaf.battery.get_range()
+
+
+#练习9.6 餐馆 
+#class Restaurant:
+#    def __init__(self, restaurant_name, restaurant_type):
+#        self.restaurant_name = restaurant_name
+#        self.restaurant_type = restaurant_type
+
+#   def describe_restaurant(self):
+#        """餐馆的两项信息"""
+#        print(f"The restaurant's name is {self.restaurant_name}.")
+#        print(f"This is a {self.restaurant_type} restaurant.")
+
+#    def open_restaurant(self):
+#        print("This restaurant is opening today.")
+
+#class IceCreamStand(Restaurant):
+#    def __init__(self,restaurant_name,restaurant_type):
+#        super().__init__(restaurant_name,restaurant_type)
+#        self.flavors = []
+
+#    def show_flavors(self):
+#        for flavor in self.flavors:
+#            print(flavor)
+
+
+#my_stand = IceCreamStand('Cold Stone', 'Ice cream')
+#y_stand.flavors.append('chocolate')
+#my_stand.flavors.append('vanilla')
+#my_stand.show_flavors()
+
+
+#练习 9.7：管理员
+#class User:
+#    def __init__(self, first_name, last_name):
+#       self.first_name = first_name
+#       self.last_name = last_name
+
+#    def describe_user(self):
+#        """用于打印用户信息摘要"""
+#        print(f"This user's name is {self.first_name} {self.last_name}.")
+
+#    def greet_user(self):
+#        """用于向用户发出个性化的问候"""
+#        print(f"Welcome to our website, {self.first_name}!")
+
+
+#class Admin(User):
+#    def __init__(self, first_name, last_name):
+#        super().__init__(first_name, last_name)
+#        self.privileges = []
+
+#    def show_privileges(self):
+#        for privilege in self.privileges:
+#            print(privilege)
+
+
+
+#admin1 = Admin('Niu', 'yiqun')
+#admin1.privileges.append('can add post')
+#admin1.privileges.append('can delete post')
+#admin1.privileges.append('can ban user')
+#admin1.show_privileges()
+
+
+
+####再学一遍9.2使用类和实例
+#9.2.1Car 类
+#class Car:
+#    def __init__(self, make, model, year):
+#        self.make = make          #这三行是将实例中的内容永久的存储在左侧的三个self.xxx上
+#        self.model = model
+#        self.year = year
+
+#   def get_descriptive_name(self):  #定义一个get_descriptive_name()的方法
+#        long_name = f"{self.year} {self.make} {self.model}"
+#        #return long_name.title()
+#        print(long_name)
+
+#my_new_car = Car('audi', 'a4', 2024)   #根据Car类创建一个实例
+#print(my_new_car.make)
+#print(my_new_car.get_descriptive_name())
+#my_new_car.get_descriptive_name()
+
+#9.2.2 给属性指定默认值
+#class Car:
+#    def __init__(self, make, model, year):
+#        self.make = make          #这三行是将实例中的内容永久的存储在左侧的三个self.xxx上
+#        self.model = model
+#        self.year = year
+#       self.odometer_reading = 0   #添加一个名为odometer_reading的属性，初始值为0
+
+#    def get_descriptive_name(self):  #定义一个get_descriptive_name()的方法
+#        long_name = f"{self.year} {self.make} {self.model}"
+#        #return long_name.title()
+#        print(long_name)
+
+#    def read_odometer(self):
+#        print(f"This car has {self.odometer_reading} miles on it.")
+
+
+#my_new_car = Car('audi', 'a4', 2024)   #根据Car类创建一个实例
+#print(my_new_car.make)
+#print(my_new_car.get_descriptive_name())
+#my_new_car.get_descriptive_name()
+#01直接修改属性值
+#my_new_car.odometer_reading = 23    #可以使用这个修改默认值
+#my_new_car.read_odometer()
+#print(my_new_car.odometer_reading)
+
+#02 通过方法修改属性值
 class Car:
-    """一次模拟汽车的简单尝试"""
     def __init__(self, make, model, year):
-        self.make = make
+        self.make = make          #这三行是将实例中的内容永久的存储在左侧的三个self.xxx上
         self.model = model
         self.year = year
-        self.odometer_reading = 10
-        
-    def get_descriptive_name(self):
-        """返回格式规范的描述性信息"""
-        long_name = f"{self.year} {self.make}, {self.model}"
-        return long_name.title()
-class Battery:
-    """一次模拟电动汽车电池的简单尝试"""
-    def __init__(self, battery_size=40):
-        """初始化电池属性"""
-        self.battery_size = battery_size
+        self.odometer_reading = 0   #添加一个名为odometer_reading的属性，初始值为0
 
-    def describe_battery(self):
-        """打印出一条电池容量的消息"""
-        print(f"This car has a {self.battery_size}-kWh battery.")
-    
-    def get_range(self):
-        """打印一条消息，指出电池续航里程"""
-        if self.battery_size == 40:
-            range = 150
-        elif self.battery_size ==65:
-            range ==225
-        print(f"This car can go about {range} miles on a full charge.")
+    def get_descriptive_name(self):  #定义一个get_descriptive_name()的方法
+        long_name = f"{self.year} {self.make} {self.model}"
+        print(long_name)
 
+    def read_odometer(self):
+        print(f"This car has {self.odometer_reading} miles on it.")
 
-class ElectricCar(Car):  #定义子类的时候必须在括号内指定父类名称。
-    """电动汽车的独特之处"""
-    def __init__(self, make, model, year):
-        """先初始化父类的属性，在初始化电动汽车特有属性"""
-        super().__init__(make, model, year)
-        self.battery = Battery()
+    def update_odometer(self, mileage):
+        self.odometer_reading = mileage
 
-my_leaf = ElectricCar('nissan', 'leaf', 2024)
-print(my_leaf.get_descriptive_name())
-my_leaf.battery.describe_battery()
-my_leaf.battery.get_range()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+my_new_car = Car('audi', 'a4', 2024)   #根据Car类创建一个实例
+print(my_new_car.make)
+my_new_car.get_descriptive_name()
+my_new_car.read_odometer()
+my_new_car.update_odometer(23)
+my_new_car.read_odometer()
 
 
 
