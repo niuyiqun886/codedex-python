@@ -503,6 +503,59 @@
 #print(my_new_car.odometer_reading)
 
 #02 通过方法修改属性值
+#class Car:
+#    def __init__(self, make, model, year):
+#        self.make = make          #这三行是将实例中的内容永久的存储在左侧的三个self.xxx上
+#        self.model = model
+#        self.year = year
+#        self.odometer_reading = 0   #添加一个名为odometer_reading的属性，初始值为0
+
+#    def get_descriptive_name(self):  #定义一个get_descriptive_name()的方法
+#        long_name = f"{self.year} {self.make} {self.model}"
+#        print(long_name)
+
+#    def read_odometer(self):
+#        print(f"This car has {self.odometer_reading} miles on it.")
+
+#    def update_odometer(self, mileage):
+#        self.odometer_reading = mileage
+
+#my_new_car = Car('audi', 'a4', 2024)   #根据Car类创建一个实例
+#print(my_new_car.make)
+#my_new_car.get_descriptive_name()
+#my_new_car.read_odometer()
+#my_new_car.update_odometer(23)
+#my_new_car.read_odometer()
+
+#class Car:
+#    def __init__(self, make, model, year):
+#        self.make = make          #这三行是将实例中的内容永久的存储在左侧的三个self.xxx上
+#        self.model = model
+#        self.year = year
+#        self.odometer_reading = 0   #添加一个名为odometer_reading的属性，初始值为0
+
+#    def get_descriptive_name(self):  #定义一个get_descriptive_name()的方法
+#        long_name = f"{self.year} {self.make} {self.model}"
+#        print(long_name)
+
+#    def read_odometer(self):
+#        print(f"This car has {self.odometer_reading} miles on it.")
+
+#    def update_odometer(self, mileage):
+#        if mileage >= self.odometer_reading:
+#            self.odometer_reading = mileage
+#        else:
+#            print("You can't roll back an odometer!")
+        
+
+#my_new_car = Car('audi', 'a4', 2024)   #根据Car类创建一个实例
+#print(my_new_car.make)
+#my_new_car.get_descriptive_name()
+#my_new_car.read_odometer()
+#my_new_car.update_odometer(23)
+#my_new_car.read_odometer()
+
+#03通过方法让属性的值递增
 class Car:
     def __init__(self, make, model, year):
         self.make = make          #这三行是将实例中的内容永久的存储在左侧的三个self.xxx上
@@ -518,18 +571,21 @@ class Car:
         print(f"This car has {self.odometer_reading} miles on it.")
 
     def update_odometer(self, mileage):
-        self.odometer_reading = mileage
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
 
-my_new_car = Car('audi', 'a4', 2024)   #根据Car类创建一个实例
-print(my_new_car.make)
-my_new_car.get_descriptive_name()
-my_new_car.read_odometer()
-my_new_car.update_odometer(23)
-my_new_car.read_odometer()
-
+    def increment_odometer(self, miles):
+        self.odometr_reading += miles
 
 
-
+my_used_car = Car('subaru', 'outback', 2019)   #根据Car类创建一个实例
+my_used_car.get_descriptive_name()
+my_used_car.update_odometer(23)
+my_used_car.read_odometer()
+my_used_car.increment_odometer(100)
+my_used_car.read_odometer()
 
 
 
