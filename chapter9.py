@@ -980,12 +980,30 @@
 #my_leaf.battery.upgrade_battery()
 #my_leaf.battery.get_range()
 
+#9.5 python 标准库
+#from random import randint, choice
+#x = randint(1, 6)
+#print(x)
+
+#players = ['Alice', 'Bob', 'Charlie', 'David']
+#random_player = choice(players)
+#print(random_player)
+#print(players)
+
+#练习9.13：骰子
+class Die:
+    def __init__(self,num_sides = 6):
+        self.num_sides = num_sides
+
+    def roll_die(self):
+        from random import randint
+        x = randint(1,self.num_sides)
+        print(x)
 
 
-
-
-
-
+die6 = Die()
+for _ in range(10):
+    die6.roll_die()
 
 
 

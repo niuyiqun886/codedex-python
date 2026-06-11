@@ -15,11 +15,82 @@
 #my_leaf.battery.get_range()
 
 #9.4.3 从一个模块中导入多个类
-from car import Car, ElectricCar
+#from car import Car, ElectricCar
+
+#my_mustang = Car('ford', 'mustang', 2024)
+#print(my_mustang.get_descriptive_name())
+#my_leaf = ElectricCar('nissan', 'leaf', 2024)
+#print(my_leaf.get_descriptive_name())
+
+#9.4.4导入整个模块
+#import car  #这里在下面使用car.Car和car.ElectricCar来访问类
+
+#my_mustang = car.Car('ford', 'mustang', 2024)
+#print(my_mustang.get_descriptive_name())
+
+#my_leaf = car.ElectricCar('nissan', 'leaf', 2024)
+#print(my_leaf.get_descriptive_name())
+
+#9.4.5 导入模块中的所有类   #这种方法不太推荐，因为它会导入模块中的所有类，可能会导致命名冲突
+#from car import *   #这里直接使用Car和ElectricCar来访问类
+#my_mustang = Car('ford', 'mustang', 2024)
+#print(my_mustang.get_descriptive_name())
+
+#my_leaf = ElectricCar('nissan', 'leaf', 2024)
+#print(my_leaf.get_descriptive_name())
+
+#9.4.6 在一个模块中导入另一个模块
+from car import Car
+from electric_car import ElectricCar as EC #这里使用as来给ElectricCar类起一个别名EC
 
 my_mustang = Car('ford', 'mustang', 2024)
 print(my_mustang.get_descriptive_name())
-my_leaf = ElectricCar('nissan', 'leaf', 2024)
+
+my_leaf = EC('nissan', 'leaf', 2024)
 print(my_leaf.get_descriptive_name())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
