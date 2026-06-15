@@ -991,28 +991,52 @@
 #print(players)
 
 #练习9.13：骰子
-class Die:
-    def __init__(self,num_sides = 6):
-        self.num_sides = num_sides
+#class Die:
+#    def __init__(self,num_sides = 6):
+#        self.num_sides = num_sides
 
-    def roll_die(self):
-        from random import randint
-        x = randint(1,self.num_sides)
-        print(x)
-
-
-die6 = Die()
-for _ in range(10):
-    die6.roll_die()
+#    def roll_die(self):
+#        from random import randint
+#        x = randint(1,self.num_sides)
+#        print(x)
 
 
+#die6 = Die()
+#for _ in range(10):
+#    die6.roll_die()
 
+#练习9.14彩票
+#winning_tickets = [5,'w',19,'e']
+#from random import choice
+#num_word = [5,4,10,20,19,18,7,3,11,9,'w','e','t','g','d']
+#my_tickets= []
+#for _ in range(4):
+#    random_item = choice(num_word)
+#    my_tickets.append(random_item)
 
+#print(f"My tickets : {my_tickets}")
+#print(f"win tickets : {winning_tickets}")
 
+#if all( item in my_tickets for item in winning_tickets):
+#    print("You win the grand prize!")
+#else:
+#    print("Sorry try again.")
 
+#练习9.15 彩票分析
+#from random import choice
+#num_word = [5,4,10,20,19,18,7,3,11,9,'w','e','t','g','d']
+#winning_tickets = [5,'w',19,'e']
+#my_tickets= []
 
-
-
+#attempts = 0
+#while True:
+#    my_tickets = [choice(num_word) for _ in range(4)]
+#    attempts += 1
+#    if set(winning_tickets) == set(my_tickets):
+#        print(f"You win the grand prize after {attempts} attempts!")
+#        break
+#    print(attempts)
+    
 
 
 
