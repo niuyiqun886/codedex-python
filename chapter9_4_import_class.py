@@ -40,17 +40,14 @@
 #print(my_leaf.get_descriptive_name())
 
 #9.4.6 在一个模块中导入另一个模块
-from car import Car
-from electric_car import ElectricCar as EC #这里使用as来给ElectricCar类起一个别名EC
+#from car import Car
+#from electric_car import ElectricCar as EC #这里使用as来给ElectricCar类起一个别名EC
 
-my_mustang = Car('ford', 'mustang', 2024)
-print(my_mustang.get_descriptive_name())
+#my_mustang = Car('ford', 'mustang', 2024)
+#print(my_mustang.get_descriptive_name())
 
-my_leaf = EC('nissan', 'leaf', 2024)
-print(my_leaf.get_descriptive_name())
-
-
-
+#my_leaf = EC('nissan', 'leaf', 2024)
+#print(my_leaf.get_descriptive_name())
 
 
 
