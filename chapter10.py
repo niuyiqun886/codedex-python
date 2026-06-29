@@ -19,6 +19,7 @@
 #contents = path.read_text().rstrip()
 #print(contents)
 
+#-------------------------------------------------------------------------------
 #10.1.3访问文件中的各行
 #from pathlib import Path
 #path = Path('D:/代码/PY_test/pi_digits.txt')
@@ -28,6 +29,7 @@
 #    print(line)
 #print(len(lines))
 
+#-------------------------------------------------------------------------------
 #10.1.4 使用文件的内容
 #from pathlib import Path
 #path = Path('D:/代码/PY_test/pi_digits.txt')
@@ -41,6 +43,7 @@
 #print(pi_string)
 #print(len(pi_string))
 
+#-------------------------------------------------------------------------------
 #10.1.5包含100万位的大型文件
 #from pathlib import Path
 #path = Path('D:/代码/PY_test/pi_million_digits.txt')
@@ -54,6 +57,7 @@
 #print(f"{pi_string[:52]}...")
 #print(len(pi_string))
 
+#-------------------------------------------------------------------------------
 #10.1.6圆周率值包含你的生日吗
 #from pathlib import Path
 #path = Path('D:/代码/PY_test/pi_million_digits.txt')
@@ -67,13 +71,14 @@
 #print(f"{pi_string[:52]}...")
 #print(len(pi_string))
 
-#irthday = input("Enter your birthday, in the form mmddyy: ")
+#birthday = input("Enter your birthday, in the form mmddyy: ")
 
 #if birthday in pi_string:
 #    print("Your birthday appears in the first million digits of pi.")
 #else:
 #    print("Your birthday does not appears in the first million digits of pi.")
 
+#-------------------------------------------------------------------------------
 #练习10.1Python学习笔记
 #from pathlib import Path
 #path = Path('D:/代码/PY_test/learning_python.txt')
@@ -90,18 +95,20 @@
 #for learn in learns:
 #    print(learn)
 
+#-------------------------------------------------------------------------------
 #练习10.2C语言学习笔记
 #for learn in learns:
 #    learn = learn.replace('python', 'C')
 #    print(learn)
 
-
+#-------------------------------------------------------------------------------
 #10.2写入文件
 ##10.2.1 写入一行
 #from pathlib import Path
 #path = Path('programming.txt')          #定义了一个相对路径下的文件夹
 #path.write_text("I love programming.""\nI like dogs")  #这样就可以直接在这个文件中写入内容了
 
+#-------------------------------------------------------------------------------
 ##10.2.2写入多行
 #from pathlib import Path
 
@@ -115,13 +122,14 @@
 ##注意这里，在对path对象调用write_text（）方法时，如果指定的文件已经存在，那么write_text（）
 ##将删除其内容，并将指定的内容写入其中。
 
-
+#-------------------------------------------------------------------------------
 ##练习10.4 访客
 #from pathlib import Path
 #name = input("Please input you name:")
 #path = Path('name.txt')
 #path.write_text(name)
 
+#-------------------------------------------------------------------------------
 ##练习10.5 访客薄
 #from pathlib import Path
 #contents = ''
@@ -134,6 +142,7 @@
 #path = Path('guest_book.txt')
 #path.write_text(contents)
 
+#-------------------------------------------------------------------------------
 ##10.3异常
 #10.3.1处理ZeroDivisionError异常
 #print(5/0)
@@ -199,28 +208,197 @@
 
 #-----------------------------------------------------------------------------------
 #10.3.6分析文本
-from pathlib import Path
+#from pathlib import Path
 
-path = Path('alice.txt')
-try:
-    contents = path.read_text(encoding = 'utf-8')
-except FileNotFoundError:
-    print(f"Sorry, the file {path} does not exit.")
-else:
+#path = Path('alice.txt')
+#try:
+#    contents = path.read_text(encoding = 'utf-8')
+#except FileNotFoundError:
+#    print(f"Sorry, the file {path} does not exit.")
+#else:
     #计算文件大致包含多少个单词
-    words = contents.split()
-    num_words = len(words)
-    print(f"The file {path} has about {num_words} words.")
+#    words = contents.split()
+#    num_words = len(words)
+#   print(f"The file {path} has about {num_words} words.")
 
 
 #-----------------------------------------------------------------------------------
-#使用多个文件
+#10.3.7使用多个文件,将计算的过程定义为一个函数
+#from pathlib import Path
+
+#def count_words(path):
+#    try:
+#        contents = path.read_text(encoding = 'utf-8')
+#    except FileNotFoundError:
+#        print(f"Sorry, the file {path} does not exit.")
+#    else:
+#    #计算文件大致包含多少个单词
+#        words = contents.split()
+#        num_words = len(words)
+#        print(f"The file {path} has about {num_words} words.")
+
+#path = Path('alice.txt')
+#count_words(path)
 
 
 
+#from pathlib import Path
+
+#def count_words(filenames):
+#    try:
+#        contents = path.read_text(encoding = 'utf-8')
+#    except FileNotFoundError:
+#        print(f"Sorry, the file {path} does not exit.")
+#    else:
+#    #计算文件大致包含多少个单词
+#        words = contents.split()
+#        num_words = len(words)
+#        print(f"The file {path} has about {num_words} words.")
 
 
+#filenames = ['alice.txt','siddhartha.txt','moby_dick.txt','little_women.txt']
+#for filename in filenames:
+#    path = Path(filename)
+#    count_words(path)
 
+
+#-------------------------------------------------------------------------------
+#10.3.8静默失败,使用pass跳过失败
+#from pathlib import Path
+#def count_words(filenames):
+#    try:
+#        contents = path.read_text(encoding = 'utf-8')
+#    except FileNotFoundError:
+#        pass
+#   else:
+#    #计算文件大致包含多少个单词
+#        words = contents.split()
+#        num_words = len(words)
+#        print(f"The file {path} has about {num_words} words.")
+
+
+#filenames = ['alice.txt','siddhartha.txt','moby_dick.txt','little_women.txt']
+#for filename in filenames:
+#    path = Path(filename)
+#    count_words(path)
+
+#-------------------------------------------------------------------------------
+#练习10.6 加法运算
+#print("Give me two numbers, and I'll add them.")
+
+#first_number = input("\nFirst number: ")
+#second_number = input("Sceond number: ")      
+#try:
+#    answer = int(first_number) + int(second_number)
+#except ValueError:
+#    print("You can't input word.")
+#else:
+#    print(answer)
+
+#-------------------------------------------------------------------------------
+#练习10.7 加法计算器
+#print("Give me two numbers, and I'll add them.")
+#print("Enter 'q' to quit.")
+#while True:
+#    first_number = input("\nFirst number: ")
+#    if first_number == 'q':
+#        break
+#    second_number = input("Sceond number: ")      
+#    if second_number == 'q':
+#        break
+#    try:
+#        answer = int(first_number) + int(second_number)
+#    except ValueError:
+#       print("You can't input word.")
+#    else:
+#        print(answer)
+
+#-------------------------------------------------------------------------------
+#10.8猫和狗
+#from pathlib import Path
+
+#files = ['cats.txt','dogs.txt','pigs.txt'] 
+#for file in files:
+#    path = Path(file)
+#    try:
+#        contents = path.read_text()
+#    except FileNotFoundError:
+#        print(f"The {file} does not exit.")
+#    else:
+#        print(contents)
+
+#-------------------------------------------------------------------------------
+#10.8猫和狗
+#from pathlib import Path
+
+#files = ['cats.txt','dogs.txt','pigs.txt'] 
+#for file in files:
+#    path = Path(file)
+#    try:
+#        contents = path.read_text()
+#    except FileNotFoundError:
+#        pass
+#    else:
+#        print(contents)
+
+#-------------------------------------------------------------------------------
+#练习10.10 常见单词
+#from pathlib import Path
+
+#path = Path('little_women.txt')
+#contents = path.read_text()
+#word = input("Please input your word: ")
+#number = contents.lower().count(word)
+#print(number)
+
+
+#-------------------------------------------------------------------------------
+#10.4 存储数据，使用json可以存储字典、列表这些复杂的结构
+#10.4.1使用json.dump()和json.loads()
+
+####存数据
+#from pathlib import Path
+#import json
+#numbers = [2, 3, 5, 7, 11, 13]
+
+#path = Path('numbers.json')
+#contents = json.dumps(numbers)
+#path.write_text(contents)
+
+####取数据，取出来就是原来的结构
+#from pathlib import Path
+#import json
+
+#path = Path('numbers.json')
+#contents = path.read_text()
+#numbers = json.loads(contents)
+
+#print(numbers)
+
+
+#10.4.2 保存和读取用户生成的数据
+####保存生成的数据
+#from pathlib import Path
+#import json
+
+#username = input("What is your name? ")
+
+#path = Path('username.json')
+#contents = json.dumps(username)
+#path.write_text(contents)
+
+#print(f"We'll remember you when you come back, {username}!")
+
+
+####读取用户的数据
+from pathlib import Path
+import json
+
+path = Path('username.json')
+contents = path.read_text()
+username = json.loads(contents)
+
+print(f"Wellcome back, {username}!")
 
 
 
