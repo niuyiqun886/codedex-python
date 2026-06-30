@@ -390,7 +390,7 @@
 
 #练习8.15：打印模型
 
-import print_models as pm
+import 前十章.print_models as pm
 
 unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
 completed_models = []

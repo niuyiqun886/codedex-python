@@ -1,4 +1,4 @@
-from car import Car
+from 前十章.car import Car
 class Battery:
     def __init__(self, battery_size=40):
         self.battery_size = battery_size
