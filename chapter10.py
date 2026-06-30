@@ -342,7 +342,7 @@
 #        print(contents)
 
 #-------------------------------------------------------------------------------
-#练习10.10 常见单词
+#练习10.10 常见单词,查找文件中的单词的数量
 #from pathlib import Path
 
 #path = Path('little_women.txt')
@@ -362,20 +362,20 @@
 #numbers = [2, 3, 5, 7, 11, 13]
 
 #path = Path('numbers.json')
-#contents = json.dumps(numbers)
-#path.write_text(contents)
+#contents = json.dumps(numbers)    ##使用json.dumps()存储
+#path.write_text(contents)         ##使用json.dunps()后还是要使用write_text()来写入
 
 ####取数据，取出来就是原来的结构
 #from pathlib import Path
 #import json
 
 #path = Path('numbers.json')
-#contents = path.read_text()
-#numbers = json.loads(contents)
+#contents = path.read_text()         ##使用json.load()之前还是要使用read_text()来读文档
+#numbers = json.loads(contents)      ##使用json.loads()来读取
 
 #print(numbers)
 
-
+#-------------------------------------------------------------------------------
 #10.4.2 保存和读取用户生成的数据
 ####保存生成的数据
 #from pathlib import Path
@@ -391,30 +391,106 @@
 
 
 ####读取用户的数据
-from pathlib import Path
+#from pathlib import Path
+#import json
+
+#path = Path('username.json')
+#contents = path.read_text()
+#username = json.loads(contents)
+
+#print(f"Wellcome back, {username}!")
+
+###将上面的合并到一个程序中
+#from pathlib import Path
+#import json
+
+#path = Path('username.json')
+#if path.exists():
+#    contents = path.read_text()
+#    username = json.loads(contents)
+#    print(f"Welcome back,{username}!")
+#else:
+#    username = input("What is your name? ")
+#    contents = json.dumps(username)
+#    path.write_text(contents)
+#    print(f"I will remember you when you come back,{username}")
+
+
+#-------------------------------------------------------------------------------
+#10.4.3 重构，即划分为一系列完成具体工作的函数进行改进
+#from remember_me import *
+
+#path = Path('username.json')
+#username1 = get_stored_username(path)
+#print(username1)
+
+#greet_user()
+
+
+#-------------------------------------------------------------------------------
+#练习10.11：喜欢的数
+#from pathlib import Path
+#import json
+
+#path = Path('word.json')
+#word = input("Plase input you favorite word: ")
+#contents = json.dumps(word)
+#path.write_text(contents)
+
+#from pathlib import Path
+#import json
+
+#path = Path('word.json')
+#contents = path.read_text()
+#word = json.loads(contents)
+#print(f"I know your favorite number! It's {word}.")
+
+
+#-------------------------------------------------------------------------------
+#练习10.12记住喜欢的数
+#from pathlib import Path
+#import json
+#path = Path('word.json')
+
+#if path.exists():
+#    contents = path.read_text()
+#    word = json.loads(contents)
+#    print(word)
+#else:
+#    word = input("Please input your favorite word: ")
+#    contents = json.dumps(word)
+#    path.write_text(contents)
+
+
+#-------------------------------------------------------------------------------
+#练习10.13用户字典，将用户的信息写入字典中
+#from pathlib import Path
+#mport json
+#path = Path('information.json')
+#infor = {}
+
+#if path.exists():
+#    contents = path.read_text()
+#    information = json.loads(contents)
+#    print(f"I know your name is {information['name']} and you are {information['age']} years old.")
+#    print(information)
+#else:
+#    username = input("Please add your username:")
+#    infor['username'] = username
+#    age = input("Please input your age: ")
+#    infor['age'] = age
+#    name = input("Please input your name: ")
+#    infor['name'] = name
+#    contents = json.dumps(infor)
+#    path.write_text(contents)
+
+
+#-------------------------------------------------------------------------------
+#练习10.14 验证用户
+from remember_me import *
 import json
 
-path = Path('username.json')
-contents = path.read_text()
-username = json.loads(contents)
-
-print(f"Wellcome back, {username}!")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+greet_user()
 
 
 
