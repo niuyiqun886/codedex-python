@@ -256,25 +256,224 @@
 #plt.show()
 
 ###前5000个正整数的立方数
+#import matplotlib.pyplot as plt
+#from pathlib import Path
+#plt.style.use('seaborn-v0_8')
+#path = Path('D:/代码/PY_test/第十五章/cubes_plot.png')
+
+#x_values = range(1, 5001, 10)
+#y_values = [x**3 for x in x_values]
+
+#fig, ax = plt.subplots()
+#ax.scatter(x_values, y_values, c=y_values, cmap=plt.cm.Blues, s=10)
+
+#ax.set_title('Cubes Numbers', fontsize=16, fontname='Times New Roman')
+#ax.set_xlabel('Value', fontsize=14, fontname='Times New Roman')
+#ax.set_ylabel('Cubes of value', fontsize=14, fontname='Times New Roman')
+
+#ax.axis([0, 5001, 0, 125_000_000_000])
+##ax.ticklabel_format(style='plain')
+#plt.savefig(path, bbox_inches='tight', dpi=200)
+#plt.show()
+
+#-------------------------------------------------------------------------------
+###15.3随机游走
+###15.3.3绘制随机游走图
+#import matplotlib.pyplot as plt
+#from random_walk import RandomWalk
+
+##创建一个RandomWalk 实例
+#w = RandomWalk()
+#rw.fill_walk()
+
+##将所有的点都绘制出来
+#plt.style.use('classic')           #使用的是什么图，classic这个图的形式
+#fig, ax = plt.subplots()
+#ax.scatter(rw.x_values, rw.y_values, s=15, color = 'red' )
+#ax.set_aspect('equal')
+#plt.show()
+
+
+#-------------------------------------------------------------------------------
+###15.3.4模拟多次随机游走
+#import matplotlib.pyplot as plt
+#from random_walk import RandomWalk
+
+#只要程序处于活跃状态，就不断地模拟随机游走
+#while True:
+#    #创建一个RandomWalk实例
+#    rw = RandomWalk()
+#    rw.fill_walk()
+#    #将所有的点都绘制出来
+#    plt.style.use('classic')           #使用的是什么图，classic这个图的形式
+#    fig, ax = plt.subplots()
+#    ax.scatter(rw.x_values, rw.y_values, s=15)
+#    ax.set_aspect('equal')
+#    plt.show()
+
+#    keep_running = input("Make another walk?(y/n): ")
+#    if keep_running == 'n':
+#        break
+
+
+#-------------------------------------------------------------------------------
+###15.3.5设置随机游走图的样式
+###01给点着色
+#import matplotlib.pyplot as plt
+#from random_walk import RandomWalk
+
+##只要程序处于活跃状态，就不断地模拟随机游走
+#while True:
+#    #创建一个RandomWalk实例
+#    rw = RandomWalk()
+#    rw.fill_walk()
+#    #将所有的点都绘制出来
+#    plt.style.use('classic')           #使用的是什么图，classic这个图的形式
+#    fig, ax = plt.subplots()
+#    point_numbers = range(rw.num_points)
+#    ax.scatter(rw.x_values, rw.y_values, c = point_numbers, cmap = plt.cm.Reds,
+#                edgecolors='none', s=15)
+#    ax.set_aspect('equal')
+#    plt.show()
+
+#    keep_running = input("Make another walk?(y/n): ")
+#    if keep_running == 'n':
+#        break
+
+###02重新绘制起点和终点
+#import matplotlib.pyplot as plt
+#from random_walk import RandomWalk
+
+#只要程序处于活跃状态，就不断地模拟随机游走
+#while True:
+#    #创建一个RandomWalk实例
+#    rw = RandomWalk()
+#    rw.fill_walk()
+#    #将所有的点都绘制出来
+#    plt.style.use('classic')           #使用的是什么图，classic这个图的形式
+#    fig, ax = plt.subplots()
+#    point_numbers = range(rw.num_points)
+#    ax.scatter(rw.x_values, rw.y_values, c = point_numbers, cmap = plt.cm.Blues,
+#                edgecolors='none', s=15)
+#    ax.set_aspect('equal')
+
+#    #突出起点和终点
+#    ax.scatter(0, 0, c='green', edgecolors='none', s = 100)
+#    ax.scatter(rw.x_values[-1], rw.y_values[-1], c = 'red', edgecolors='none', s = 100)
+#    plt.show()
+
+#    keep_running = input("Make another walk?(y/n): ")
+#    if keep_running == 'n':
+#        break
+
+###03隐藏坐标轴
+#import matplotlib.pyplot as plt
+#from random_walk import RandomWalk
+
+##只要程序处于活跃状态，就不断地模拟随机游走
+#while True:
+#    #创建一个RandomWalk实例
+#    rw = RandomWalk(10000)        #在括号中添加数值可以改变游走的点数
+#    rw.fill_walk()
+#    #将所有的点都绘制出来
+#    plt.style.use('classic')           #使用的是什么图，classic这个图的形式
+#    fig, ax = plt.subplots()
+#    point_numbers = range(rw.num_points)
+#    ax.scatter(rw.x_values, rw.y_values, c = point_numbers, cmap = plt.cm.Blues,
+#                edgecolors='none', s=15)
+#    ax.set_aspect('equal')
+
+#    #突出起点和终点
+#    ax.scatter(0, 0, c='green', edgecolors='none', s = 100)
+#    ax.scatter(rw.x_values[-1], rw.y_values[-1], c = 'red', edgecolors='none', s = 100)
+
+#    #隐藏坐标轴
+#    ax.get_xaxis().set_visible(False)
+#    ax.get_yaxis().set_visible(False)
+#    plt.show()
+
+#    keep_running = input("Make another walk?(y/n): ")
+#    if keep_running == 'n':
+#        break
+
+###05调整尺寸以适应屏幕
+#import matplotlib.pyplot as plt
+#from random_walk import RandomWalk
+
+#只要程序处于活跃状态，就不断地模拟随机游走
+#while True:
+#    #创建一个RandomWalk实例
+#    rw = RandomWalk(10000)        #在括号中添加数值可以改变游走的点数
+#    rw.fill_walk()
+#    #将所有的点都绘制出来
+#    plt.style.use('classic')           #使用的是什么图，classic这个图的形式
+#    fig, ax = plt.subplots(figsize=(15, 9), dpi=128)
+#    point_numbers = range(rw.num_points)
+#    ax.scatter(rw.x_values, rw.y_values, c = point_numbers, cmap = plt.cm.Blues,
+#                edgecolors='none', s=15)
+#    ax.set_aspect('equal')
+
+#    #突出起点和终点
+#    ax.scatter(0, 0, c='green', edgecolors='none', s = 100)
+#    ax.scatter(rw.x_values[-1], rw.y_values[-1], c = 'red', edgecolors='none', s = 100)
+
+#    #隐藏坐标轴
+#    ax.get_xaxis().set_visible(False)
+#    ax.get_yaxis().set_visible(False)
+#    plt.show()
+
+#    keep_running = input("Make another walk?(y/n): ")
+#    if keep_running == 'n':
+#        break
+
+
+#-------------------------------------------------------------------------------
+###练习15.3：分子运动
 import matplotlib.pyplot as plt
-from pathlib import Path
-plt.style.use('seaborn-v0_8')
-path = Path('D:/代码/PY_test/第十五章/cubes_plot.png')
+from random_walk import RandomWalk
 
-x_values = range(1, 5001, 10)
-y_values = [x**3 for x in x_values]
+while True:
+    rw = RandomWalk(5000)
+    rw.fill_walk()
+    plt.style.use('classic')
+    fig, ax = plt.subplots()
+    point_numbers = range(rw.num_points)
+    ax.plot(rw.x_values, rw.y_values, color = 'red', linewidth = 1)
+    ax.set_aspect('equal')
 
-fig, ax = plt.subplots()
-ax.scatter(x_values, y_values, c=y_values, cmap=plt.cm.Blues, s=10)
+    #突出起点和终点
+    ax.scatter(0, 0, color = 'green', s = 100)
+    ax.scatter(rw.x_values[-1], rw.y_values[-1], color = 'blue',s = 100)
 
-ax.set_title('Cubes Numbers', fontsize=16, fontname='Times New Roman')
-ax.set_xlabel('Value', fontsize=14, fontname='Times New Roman')
-ax.set_ylabel('Cubes of value', fontsize=14, fontname='Times New Roman')
+    #隐藏坐标轴
+    ax.get_xaxis().set_visible(False)
+    ax.get_yaxis().set_visible(False)
+    plt.show()
 
-ax.axis([0, 5001, 0, 125_000_000_000])
-#ax.ticklabel_format(style='plain')
-plt.savefig(path, bbox_inches='tight', dpi=200)
-plt.show()
+    keep_running = input("Make another walk?(y/n):")
+    if keep_running == 'n':
+        break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
