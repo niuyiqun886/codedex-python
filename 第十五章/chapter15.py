@@ -429,54 +429,142 @@
 
 #-------------------------------------------------------------------------------
 ###练习15.3：分子运动
-import matplotlib.pyplot as plt
-from random_walk import RandomWalk
+#import matplotlib.pyplot as plt
+#from random_walk import RandomWalk
 
-while True:
-    rw = RandomWalk(5000)
-    rw.fill_walk()
-    plt.style.use('classic')
-    fig, ax = plt.subplots()
-    point_numbers = range(rw.num_points)
-    ax.plot(rw.x_values, rw.y_values, color = 'red', linewidth = 1)
-    ax.set_aspect('equal')
+#while True:
+#    rw = RandomWalk(5000)
+#    rw.fill_walk()
+#    plt.style.use('classic')
+#    fig, ax = plt.subplots()
+#    point_numbers = range(rw.num_points)
+#    ax.plot(rw.x_values, rw.y_values, color = 'red', linewidth = 1)
+#    ax.set_aspect('equal')
 
     #突出起点和终点
-    ax.scatter(0, 0, color = 'green', s = 100)
-    ax.scatter(rw.x_values[-1], rw.y_values[-1], color = 'blue',s = 100)
+#    ax.scatter(0, 0, color = 'green', s = 100)
+#    ax.scatter(rw.x_values[-1], rw.y_values[-1], color = 'blue',s = 100)
 
     #隐藏坐标轴
-    ax.get_xaxis().set_visible(False)
-    ax.get_yaxis().set_visible(False)
-    plt.show()
+#    ax.get_xaxis().set_visible(False)
+#    ax.get_yaxis().set_visible(False)
+#    plt.show()
 
-    keep_running = input("Make another walk?(y/n):")
-    if keep_running == 'n':
-        break
-
-
+#    keep_running = input("Make another walk?(y/n):")
+#    if keep_running == 'n':
+#        break
 
 
+#-------------------------------------------------------------------------------
+###15.4使用Plotly模拟掷骰子
+###15.4.2创建Die类
+###15.4.3掷骰子
+
+#from die import Die
+
+##创建一个D6
+#die = Die()
+##掷几次骰子并将结果存储在一个列表中
+#results = []
+#for roll_num in range(1000):
+#    result = die.roll()
+#    results.append(result)
+
+#print(results)
+
+#-------------------------------------------------------------------------------
+###15.4.4分析结果
+#frequencies = []
+#poss_results = range(1, die.num_sides + 1)
+#for value in poss_results:
+#    frequency = results.count(value)
+#    frequencies.append(frequency)
+
+#print(frequencies)
+
+#-------------------------------------------------------------------------------
+###15.4.5绘制直方图
+#import plotly.express as px
+#from die import Die
+#from pathlib import Path
+
+#die = Die()
+#results = []
+#for _ in range(1000):
+#    result = die.roll()
+#    results.append(result)
+
+##print(results)
+
+#frequencies = []
+#poss_results = range(1, die.num_sides + 1)
+#for value in poss_results:
+#    frequency = results.count(value)
+#    frequencies.append(frequency)
+
+##对结果进行可视化
+#fig = px.bar(x = poss_results, y=frequencies)
+#fig.write_html('D:\代码\PY_test\第十五章\die_visual.html')
+#fig.show()
+
+#-------------------------------------------------------------------------------
+###15.4.6定制绘图
+#import plotly.express as px
+#from die import Die
+#from pathlib import Path
+
+#die = Die()
+#results = []
+#for _ in range(1000):
+#    result = die.roll()
+#    results.append(result)
+
+#frequencies = []
+#poss_results = range(1, die.num_sides + 1)
+#for value in poss_results:
+#    frequency = results.count(value)
+#    frequencies.append(frequency)
+
+#print(frequencies)
+#title = "Results of Rolling One D6 1,000 Times"
+#labels = {'x': 'Result', 'y': 'Frequency of Result'}
+#fig = px.bar(x = poss_results, y = frequencies, title = title, labels = labels)
+#fig.write_html("D:\代码\PY_test\第十五章\die_visual_1.html")
+#fig.show()
+
+#-------------------------------------------------------------------------------
+###15.4.7同时掷两个骰子
+import plotly.express as px
+from die import Die
+from pathlib import Path
+
+#创建两个D6
+die_1 = Die()
+die_2 = Die()
+
+#掷骰子多次，并将结果存储到一个列表中
+results = []
+for _ in range(1000):
+    result = die_1.roll() + die_2.roll()
+    results.append(result)
+
+#分析结果
+frequencies = []
+max_result = die_1.num_sides + die_2.num_sides
+poss_results = range(1, max_result + 1)
+for value in poss_results:
+    frequency = results.count(value)
+    frequencies.append(frequency)
+
+title = "Result of Rolling Two D6 Dice 1,000 Times"
+labels = {'x': 'Result','y':'Frequency'}
+fig = px.bar(x = poss_results,y = frequencies, title = title,labels = labels)
+fig.write_html("D:\代码\PY_test\第十五章\die_visual_2.html")
+fig.show()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#-------------------------------------------------------------------------------
+###进一步定制
 
 
 
