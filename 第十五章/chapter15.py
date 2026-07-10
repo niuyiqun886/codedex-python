@@ -538,7 +538,7 @@ import plotly.express as px
 from die import Die
 from pathlib import Path
 
-#创建两个D6
+#创建两个D6 实例 
 die_1 = Die()
 die_2 = Die()
 
