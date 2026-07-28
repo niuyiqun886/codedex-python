@@ -534,6 +534,37 @@
 
 #-------------------------------------------------------------------------------
 ###15.4.7同时掷两个骰子
+#import plotly.express as px
+#from die import Die
+#from pathlib import Path
+
+##创建两个D6 实例 
+#die_1 = Die()
+#die_2 = Die()
+
+##掷骰子多次，并将结果存储到一个列表中
+#results = []
+#for _ in range(1000):
+#    result = die_1.roll() + die_2.roll()
+#    results.append(result)
+
+##分析结果
+#frequencies = []
+#max_result = die_1.num_sides + die_2.num_sides
+#poss_results = range(1, max_result + 1)
+#for value in poss_results:
+#    frequency = results.count(value)
+#    frequencies.append(frequency)
+
+#title = "Result of Rolling Two D6 Dice 1,000 Times"
+#labels = {'x': 'Result','y':'Frequency'}
+#fig = px.bar(x = poss_results,y = frequencies, title = title,labels = labels)
+#fig.write_html("D:\代码\PY_test\第十五章\die_visual_2.html")
+##fig.show()     #不show的话可以直接看结果
+
+
+#-------------------------------------------------------------------------------
+###进一步定制，给所有的条形都加上标签
 import plotly.express as px
 from die import Die
 from pathlib import Path
@@ -559,12 +590,9 @@ for value in poss_results:
 title = "Result of Rolling Two D6 Dice 1,000 Times"
 labels = {'x': 'Result','y':'Frequency'}
 fig = px.bar(x = poss_results,y = frequencies, title = title,labels = labels)
+fig.update_layout(xaxis_dtick = 1)  
 fig.write_html("D:\代码\PY_test\第十五章\die_visual_2.html")
-fig.show()
-
-
-#-------------------------------------------------------------------------------
-###进一步定制
+#fig.show()     #不show的话可以直接看结果
 
 
 
