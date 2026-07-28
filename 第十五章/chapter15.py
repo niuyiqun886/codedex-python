@@ -565,34 +565,164 @@
 
 #-------------------------------------------------------------------------------
 ###进一步定制，给所有的条形都加上标签
+#import plotly.express as px
+#from die import Die
+#from pathlib import Path
+
+##创建两个D6 实例 
+#die_1 = Die(6)
+#die_2 = Die(10)
+
+##掷骰子多次，并将结果存储到一个列表中
+#results = []
+#for _ in range(5000):
+#    result = die_1.roll() + die_2.roll()
+#    results.append(result)
+
+#-------------------------------------------------------------------------------
+##分析结果
+#frequencies = []
+#max_result = die_1.num_sides + die_2.num_sides
+#poss_results = range(1, max_result + 1)
+#for value in poss_results:
+#    frequency = results.count(value)
+#    frequencies.append(frequency)
+
+#title = "Result of Rolling Two D6 Dice 1,000 Times"
+#labels = {'x': 'Result','y':'Frequency'}
+#fig = px.bar(x = poss_results,y = frequencies, title = title,labels = labels)
+#fig.update_layout(xaxis_dtick = 1)  
+#fig.write_html("D:\代码\PY_test\第十五章\die_visual_2.html")
+##fig.show()     #不show的话可以直接看结果
+
+
+#-------------------------------------------------------------------------------
+#练习15.6两个D8
+#import plotly.express as px
+#from die import Die
+#from pathlib import Path
+
+#die_1 = Die(8)
+#die_2 = Die(8)
+
+#results = []
+#for _ in range(10_000_000):
+#    result = die_1.roll() + die_2.roll()
+#    results.append(result)
+
+
+#frequencies = []
+#max_result = die_1.num_sides + die_2.num_sides
+#poss_results = range(1, max_result + 1)
+#for value in poss_results:
+#    frequency = results.count(value)
+#    frequencies.append(frequency)
+
+#title = 'Result of Rolling Two D6 Dice 1,000 Times'
+#labels = {'x':'Result', 'y': 'Frequency'}
+#fig = px.bar(x = poss_results,y = frequencies, title = title, labels = labels)
+#fig.update_layout(xaxis_dtick = 1)
+#fig.write_html("D:\代码\PY_test\第十五章\die_visual_8_8.html")
+
+#-------------------------------------------------------------------------------
+###练习15.7同时掷三个骰子
+#import plotly.express as px
+#from die import Die
+#from pathlib import Path
+
+#die_1 = Die(6)
+#die_2 = Die(6)
+#die_3 = Die(6)
+
+#results = []
+#for _ in range(10_000):
+#    result = die_1.roll() + die_2.roll() + die_3.roll()
+#    results.append(result)
+
+#frequencies = []
+#poss_results = range(3, 18+1)
+#for value in poss_results:
+#    frequency = results.count(value)
+#    frequencies.append(frequency)
+
+#title = 'Result of Rolling Three D6 Dice 1,000 Times'
+#labels = {'x':'resules','y':'frequency'}
+#fig = px.bar(x = poss_results,y = frequencies, title = title, labels = labels )
+#fig.update_layout(xaxis_dtick = 1)
+#fig.write_html("D:\代码\PY_test\第十五章\html\die_visual_15_7.html")
+
+
+
+#-------------------------------------------------------------------------------
+###练习15.8将点数相乘
+#import plotly.express as px
+#from die import Die
+#from pathlib import Path
+
+#die_1 = Die(6)
+#die_2 = Die(6)
+
+#results = []
+#for _ in range(1_000_000):
+#    result = die_1.roll() * die_2.roll()
+#    results.append(result)
+
+#frequencies = []
+#max_result = die_1.num_sides + die_2.num_sides
+#poss_results = range(1, max_result+1)
+#for value in poss_results:
+#    frequency = results.count(value)
+#    frequencies.append(frequency)
+
+#title = 'Result of Rolling Two D6 Dice 1,000 Times'
+#labels = {'x':'resules','y':'frequency'}
+#fig = px.bar(x = poss_results,y = frequencies, title = title, labels = labels )
+#fig.update_layout(xaxis_dtick = 1)
+#fig.write_html("D:\代码\PY_test\第十五章\html\die_visual_15_8.html")
+
+
+#-------------------------------------------------------------------------------
+###练习15.9改用列表推导式
 import plotly.express as px
 from die import Die
 from pathlib import Path
 
-#创建两个D6 实例 
 die_1 = Die()
 die_2 = Die()
 
-#掷骰子多次，并将结果存储到一个列表中
-results = []
-for _ in range(1000):
-    result = die_1.roll() + die_2.roll()
-    results.append(result)
+#####错误示例:这样只掷了一次并没循环
+#####result = die_1.roll() + die_2.roll()
+#####results = [result for _ in range(1000) ]
+#####print(results)
 
-#分析结果
-frequencies = []
+results = [die_1.roll() + die_2.roll() for _ in range(1000) ]
+#print(results)
+
 max_result = die_1.num_sides + die_2.num_sides
-poss_results = range(1, max_result + 1)
-for value in poss_results:
-    frequency = results.count(value)
-    frequencies.append(frequency)
 
-title = "Result of Rolling Two D6 Dice 1,000 Times"
-labels = {'x': 'Result','y':'Frequency'}
-fig = px.bar(x = poss_results,y = frequencies, title = title,labels = labels)
-fig.update_layout(xaxis_dtick = 1)  
-fig.write_html("D:\代码\PY_test\第十五章\die_visual_2.html")
-#fig.show()     #不show的话可以直接看结果
+frequencies = [results.count(value) for value in range(2, max_result+1)]  #这里最小点数是2，所以应该改为2 到max_result+1
+#print(frequencies)
+
+title = 'Result of Rolling Two D6 Dice 1,000 Times'
+labels = {'x':'max_resules','y':'frequency'}
+fig = px.bar(x = range(2, max_result+1), y = frequencies, title = title, labels = labels )
+fig.update_layout(xaxis_dtick = 1)
+fig.write_html("D:\代码\PY_test\第十五章\html\die_visual_15_9.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

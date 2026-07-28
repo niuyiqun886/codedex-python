@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "a5baa7a19d0d0b8d",
@@ -185,8 +186,22 @@
   },
   "active": "393abf37e7c6b2d9",
   "lastOpenFiles": [
-    "第十五章/squares_plot_1.png",
+    "第十五章/html/die_visual_15_9.html",
+    "第十五章/html/die_visual_15_8.html",
+    "第十五章/html/die_visual_15_7.html",
+    "第十五章/png/squares_plot.png",
+    "第十五章/png/squares_plot_1.png",
+    "第十五章/png/cubes_plot.png",
+    "第十五章/png",
+    "第十五章/新建文件夹",
+    "第十五章/html/die_visual_1.html",
+    "第十五章/html/die_visual_2.html",
+    "第十五章/html/die_visual_8_8.html",
+    "第十五章/html/die_visual.html",
+    "第十五章/html",
+    "第十五章/die_visual_8_8.html",
     "函数语法和功能描述.md",
+    "第十五章/squares_plot_1.png",
     "第十五章/squares_plot.png",
     "第十五章/cubes_plot.png"
   ]
