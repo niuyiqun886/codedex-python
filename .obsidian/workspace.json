@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "函数语法和功能描述.md",
+                "file": "sim_data/matplotlib绘图参数速查.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "函数语法和功能描述"
+              "title": "matplotlib绘图参数速查"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "a5baa7a19d0d0b8d",
@@ -186,19 +185,20 @@
   },
   "active": "393abf37e7c6b2d9",
   "lastOpenFiles": [
-    "第十六章/csv/eq_data.csv",
-    "python文件保存形式.md",
     "函数语法和功能描述.md",
-    "第十六章/test.py",
-    "第十六章/html/global_earthquakes_1.html",
-    "第十六章/geojson/features_1.json",
-    "第十六章/eq_world_map.py",
-    "第十六章/geojson/eq_data_30_day_m1.geojson",
-    "第十六章/html/global_earthquakes.html",
-    "第十六章/html",
-    "第十六章/新建文件夹",
-    "第十六章/geojson/features.json",
-    "第十六章/geojson/readable_eq_data.geojson",
+    "sim_data/matplotlib绘图参数速查.md",
+    "sim_data/matplotlib绘图参数速查.md.tmp.33160.06dba3b48d34",
+    "sim_data/python_png/gain.py.tmp.33160.24c323e8a195",
+    "sim_data/python_png/gain.py.tmp.33160.55114a21e780",
+    "sim_data/python_png/gain.py.tmp.33160.7b1d2e983c28",
+    "sim_data/python_png/gain.py.tmp.33160.1b7b7de4fc64",
+    "sim_data/python_png/gain.py.tmp.33160.3718e9b061f3",
+    "sim_data/python_png/gain.py.tmp.33160.94a858b8a270",
+    "sim_data/python_png/gain.py.tmp.33160.0451a1addf9a",
+    "sim_data/python_png/gain.py.tmp.33160.54f70de12090",
+    "sim_data/python_png/gain.py.tmp.33160.0cbe798710c6",
+    "sim_data/png/gain.png",
+    "python文件保存形式.md",
     "第十六章/png/ex_16_4.png",
     "第十六章/png/16_2.png",
     "第十六章/png/16_1_10_1.png",
@@ -208,7 +208,6 @@
     "第十六章/png/16_1_8.png",
     "第十六章/png/16_1_7.png",
     "datetime模块中设置日期和时间格式的参数.md",
-    "第十六章/png/16_1_6.png",
-    "第十六章/png/16_1_4.png"
+    "第十六章/png/16_1_6.png"
   ]
 }
