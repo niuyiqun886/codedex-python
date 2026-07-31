@@ -186,6 +186,9 @@
   },
   "active": "393abf37e7c6b2d9",
   "lastOpenFiles": [
+    "第十六章/csv/eq_data.csv",
+    "python文件保存形式.md",
+    "函数语法和功能描述.md",
     "第十六章/test.py",
     "第十六章/html/global_earthquakes_1.html",
     "第十六章/geojson/features_1.json",
@@ -196,7 +199,6 @@
     "第十六章/新建文件夹",
     "第十六章/geojson/features.json",
     "第十六章/geojson/readable_eq_data.geojson",
-    "第十六章/eq_explore_data.py",
     "第十六章/png/ex_16_4.png",
     "第十六章/png/16_2.png",
     "第十六章/png/16_1_10_1.png",
@@ -205,7 +207,6 @@
     "第十六章/png/16_1_9.png",
     "第十六章/png/16_1_8.png",
     "第十六章/png/16_1_7.png",
-    "函数语法和功能描述.md",
     "datetime模块中设置日期和时间格式的参数.md",
     "第十六章/png/16_1_6.png",
     "第十六章/png/16_1_4.png"

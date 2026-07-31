@@ -8,12 +8,13 @@ path = Path(r'D:\代码\PY_test\第十六章\geojson\eq_data_1_day_m1.geojson')
 connects = path.read_text()
 all_eq_data = json.loads(connects)     #将connects转换成字典的形式
 #print(all_eq_data)
+#print(type(all_eq_data))
 
 #将数据文件转换为更易读的版本
 path = Path(r'D:\代码\PY_test\第十六章\geojson\readable_eq_data.geojson')
 readable_connects = json.dumps(all_eq_data, indent = 4)
 path.write_text(readable_connects)
-
+#print(type(readable_connects))
 #-------------------------------------------------------------------------------
 ###16.2.3创建地震列表
 all_eq_dicts = all_eq_data['features']          #取的是features这个key对应的value
@@ -45,10 +46,10 @@ for eq_dict in all_eq_dicts:
     lons.append(lon)
     lats.append(lat)
 
-print(mags[:10])
-print(titles[:2])
-print(lons[:5])
-print(lats[:5])
+#print(mags[:10])
+#print(titles[:2])
+#print(lons[:5])
+#print(lats[:5])
 
 #-------------------------------------------------------------------------------
 ###16.2.6绘制散点图
@@ -68,7 +69,7 @@ print(lats[:5])
 ##fig.show()
 
 #-------------------------------------------------------------------------------
-###16.2.7指定数据的另一种形式
+###16.2.7指定数据的另一种形式，就是将数据做成一个表
 import plotly.express as px
 import pandas as pd
 
@@ -76,7 +77,8 @@ data = pd.DataFrame(
     data = zip(lons, lats, titles, mags), columns = ['经度', '纬度', '位置', 
     '震级']
 )
-data.head()
+data.to_csv(r'D:\代码\PY_test\第十六章\csv\eq_data.csv', index=False, encoding='utf-8-sig')
+print(data.head())     #查看前五行
 
 #fig = px.scatter(
 #    data,
