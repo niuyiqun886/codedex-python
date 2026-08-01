@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -78,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "a5baa7a19d0d0b8d",
@@ -185,18 +188,20 @@
   },
   "active": "393abf37e7c6b2d9",
   "lastOpenFiles": [
+    "sim_data/python_code/gain.py",
+    "sim_data/python_code/gain_clean.py.tmp.14276.6b7f00694f14",
+    "sim_data/python_code/gain_old.py",
+    "sim_data/python_code/gain_clean.py",
+    "sim_data/python_png/gain_clean.py",
+    "sim_data/python_png",
+    "sim_data/python_code/MC.py.tmp.32820.b9fa1d1a10b1",
+    "sim_data/python_code/MC_old.py",
+    "sim_data/python_code/MC_old.py.tmp.32820.6e81e3d590ba",
+    "sim_data/csv_data/2D213100",
+    "sim_data/csv_data/5CCA2100",
+    "sim_data/png/mc.png",
     "函数语法和功能描述.md",
     "sim_data/matplotlib绘图参数速查.md",
-    "sim_data/matplotlib绘图参数速查.md.tmp.33160.06dba3b48d34",
-    "sim_data/python_png/gain.py.tmp.33160.24c323e8a195",
-    "sim_data/python_png/gain.py.tmp.33160.55114a21e780",
-    "sim_data/python_png/gain.py.tmp.33160.7b1d2e983c28",
-    "sim_data/python_png/gain.py.tmp.33160.1b7b7de4fc64",
-    "sim_data/python_png/gain.py.tmp.33160.3718e9b061f3",
-    "sim_data/python_png/gain.py.tmp.33160.94a858b8a270",
-    "sim_data/python_png/gain.py.tmp.33160.0451a1addf9a",
-    "sim_data/python_png/gain.py.tmp.33160.54f70de12090",
-    "sim_data/python_png/gain.py.tmp.33160.0cbe798710c6",
     "sim_data/png/gain.png",
     "python文件保存形式.md",
     "第十六章/png/ex_16_4.png",
@@ -207,7 +212,6 @@
     "第十六章/png/16_1_9.png",
     "第十六章/png/16_1_8.png",
     "第十六章/png/16_1_7.png",
-    "datetime模块中设置日期和时间格式的参数.md",
-    "第十六章/png/16_1_6.png"
+    "datetime模块中设置日期和时间格式的参数.md"
   ]
 }
